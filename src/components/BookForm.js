@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { sendBooksApi } from '../redux/books/books';
 
 const BookForm = () => {
   const dispatch = useDispatch();
@@ -31,13 +31,13 @@ const BookForm = () => {
 
   const sumitBook = (e) => {
     e.preventDefault();
-    if (title.trim() === '' || category.trim() === '') {
+    if (title === '' || category === '') {
       setErrorBook('Please fill all fields and Category');
     } else {
       const newBook = {
-        id: uuidv4(), title, author, category,
+        item_id: uuidv4(), title, author, category,
       };
-      dispatch(addBook(newBook));
+      dispatch(sendBooksApi(newBook));
       setTitle('');
       setAuthor('');
       setCategory('');
@@ -83,5 +83,4 @@ const BookForm = () => {
     </div>
   );
 };
-
 export default BookForm;

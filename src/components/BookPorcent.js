@@ -2,7 +2,7 @@ import React from 'react';
 
 const BookPorcent = () => (
   <div className="completion">
-    <div className="round">
+    <div className="porcent">
       <img alt="progress" />
     </div>
     <div>

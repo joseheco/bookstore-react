@@ -1,15 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/books';
 
-const BookForm = () => (
-  <form className="addForm">
-    <label htmlFor="title">
-      <input id="title" placeholder="Title" required />
-    </label>
-    <label htmlFor="author">
-      <input id="author" placeholder="Author" required />
-    </label>
-    <button type="submit" className="add btn">Add</button>
-  </form>
-);
+const BookForm = () => {
+  const dispatch = useDispatch();
+  const [author, setAuthor] = useState('');
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [errorBook, setErrorBook] = useState('');
+  const categories = ['Select Category',
+    'Action',
+    'Science-Fiction',
+    'Ecology',
+    'Gastronomy',
+    'Anime',
+  ];
+
+  const getAuthor = (e) => {
+    setAuthor(e.target.value);
+  };
+
+  const getTitle = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const getCategory = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const sumitBook = (e) => {
+    e.preventDefault();
+    if (title.trim() === '' || category.trim() === '') {
+      setErrorBook('Please fill all fields and Category');
+    } else {
+      const newBook = {
+        id: uuidv4(), title, author, category,
+      };
+      dispatch(addBook(newBook));
+      setTitle('');
+      setAuthor('');
+      setCategory('');
+      setErrorBook('');
+    }
+  };
+  return (
+    <div className="div-form">
+      <h2 className="title-book">Add New Book</h2>
+      <form className="form" onSubmit={sumitBook}>
+        <div className="input">
+          <input
+            type="text"
+            placeholder="Enter title"
+            id="title"
+            onChange={getTitle}
+            value={title}
+            required
+          />
+        </div>
+        <div className="input">
+          <input
+            type="text"
+            placeholder="Enter author"
+            id="author"
+            onChange={getAuthor}
+            value={author}
+            required
+            />
+          <span>
+            {errorBook}
+          </span>
+        </div>
+        <select className="input" onChange={getCategory} value={category}>
+          {
+            categories.map((category) => (
+              <option key={category} value={category}>{category}</option>
+            ))
+          }
+        </select>
+        <button type="button" className="addBtn input" onClick={sumitBook}>Add Book</button>
+      </form>
+    </div>
+  );
+};
 
 export default BookForm;

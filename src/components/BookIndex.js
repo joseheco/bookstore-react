@@ -1,13 +1,14 @@
 import React from 'react';
-import Book from './Book';
+import BookPage from './BookPage';
 import BookForm from './BookForm';
 import './Book.css';
 
 const BookCreate = () => (
   <>
-    <Book />
+    <BookPage />
     <BookForm />
   </>
 );
 
 export default BookCreate;
+

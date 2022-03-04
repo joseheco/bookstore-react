@@ -13,6 +13,6 @@ const App = () => (
       <Route path="categories" element={<Categories />} />
     </Routes>
   </BrowserRouter>
-); 
+);
 
 export default App;

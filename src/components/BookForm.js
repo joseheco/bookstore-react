@@ -66,7 +66,7 @@ const BookForm = () => {
             onChange={getAuthor}
             value={author}
             required
-            />
+          />
           <span>
             {errorBook}
           </span>

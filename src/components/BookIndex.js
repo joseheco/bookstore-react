@@ -11,4 +11,3 @@ const BookCreate = () => (
 );
 
 export default BookCreate;
-

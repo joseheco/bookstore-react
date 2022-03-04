@@ -1,0 +1,25 @@
+.book {
+  display: flex;
+  justify-content: space-between;
+  margin: 6rem;
+}
+
+.Book {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.div-form {
+  margin: 5rem;
+}
+
+.input {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.newBook {
+  list-style: none;
+}

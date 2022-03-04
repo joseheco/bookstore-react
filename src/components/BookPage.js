@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const BookPage = () => {
-  const myBooks = useSelector((store)=> store.booksReducer);
+  const myBooks = useSelector((store) => store.booksReducer);
   return (
     <div>
       {myBooks.map((book) => (

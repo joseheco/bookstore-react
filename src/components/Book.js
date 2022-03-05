@@ -18,11 +18,12 @@ const Book = ({
       <div className="Book">
         <div>
           <li className="newBook">
-            <h2>Book</h2>
-            <p>{title}</p>
-            <p>{author}</p>
-            <p>{category}</p>
+            <h2 className="category">{category}</h2>
+            <p className="title">{title}</p>
+            <p className="author">{author}</p>
+            <button type="button" className="Comment">Comment</button>
             <button type="button" className="delBtn" onClick={() => { remove(item_id); }}>Remove</button>
+            <button type="button" className="Edit">Edit</button>
           </li>
         </div>
         <div className="porcent">

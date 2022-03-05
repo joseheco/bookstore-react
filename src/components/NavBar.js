@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Profile from '../img/profile.svg';
 
 const NavBar = () => (
   <div>
     <nav>
       <ul>
-        <li>
-          <Link to="/">Books</Link>
+        <li className="title-app">
+          Bookstore CMS
         </li>
         <li>
-          <Link to="categories">Categories</Link>
+          <Link to="/">BOOKS</Link>
+        </li>
+        <li>
+          <Link to="categories">CATEGORIES</Link>
         </li>
       </ul>
+      <img className="profile" alt="Profile" src={Profile} />
     </nav>
   </div>
 );

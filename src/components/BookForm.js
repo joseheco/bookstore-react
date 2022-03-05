@@ -46,10 +46,11 @@ const BookForm = () => {
   };
   return (
     <div className="div-form">
-      <h2 className="title-book">Add New Book</h2>
+      <h2 className="title-book">ADD NEW BOOK</h2>
       <form className="form" onSubmit={sumitBook}>
-        <div className="input">
+        <div>
           <input
+            className="input"
             type="text"
             placeholder="Enter title"
             id="title"
@@ -58,8 +59,9 @@ const BookForm = () => {
             required
           />
         </div>
-        <div className="input">
+        <div>
           <input
+            className="input"
             type="text"
             placeholder="Enter author"
             id="author"
@@ -78,7 +80,7 @@ const BookForm = () => {
             ))
           }
         </select>
-        <button type="button" className="addBtn input" onClick={sumitBook}>Add Book</button>
+        <button type="button" className="addBtn" onClick={sumitBook}>Add Book</button>
       </form>
     </div>
   );

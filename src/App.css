@@ -4,5 +4,18 @@ ul {
   gap: 1rem;
   list-style: none;
   justify-content: flex-end;
-  margin-right: 4rem;
+  margin: 2rem 3.6rem;
+  align-items: center;
+}
+
+li a {
+  text-decoration: none;
+  color: gray;
+}
+
+.title-app {
+  color: #0090ff;
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 2rem;
 }

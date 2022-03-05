@@ -45,12 +45,12 @@ const BookForm = () => {
     }
   };
   return (
-    <div className="div-form">
+    <div className="div-form display">
       <h2 className="title-book">ADD NEW BOOK</h2>
-      <form className="form" onSubmit={sumitBook}>
+      <form className="form display" onSubmit={sumitBook}>
         <div>
           <input
-            className="input"
+            className="input display"
             type="text"
             placeholder="Enter title"
             id="title"
@@ -61,7 +61,7 @@ const BookForm = () => {
         </div>
         <div>
           <input
-            className="input"
+            className="input display"
             type="text"
             placeholder="Enter author"
             id="author"
@@ -73,7 +73,7 @@ const BookForm = () => {
             {errorBook}
           </span>
         </div>
-        <select className="input" onChange={getCategory} value={category}>
+        <select className="input display" onChange={getCategory} value={category}>
           {
             categories.map((category) => (
               <option key={category} value={category}>{category}</option>

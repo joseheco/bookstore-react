@@ -15,22 +15,24 @@ const Book = ({
   };
   return (
     <>
-      <div className="Book">
+      <div className="Book display">
         <div>
           <li className="newBook">
-            <h2 className="category">{category}</h2>
-            <p className="title">{title}</p>
+            <h2 className="category bold">{category}</h2>
+            <p className="title bold">{title}</p>
             <p className="author">{author}</p>
             <button type="button" className="Comment">Comment</button>
             <button type="button" className="delBtn" onClick={() => { remove(item_id); }}>Remove</button>
             <button type="button" className="Edit">Edit</button>
           </li>
         </div>
-        <div className="porcent">
-          <BookPorcent />
-        </div>
-        <div className="progress">
-          <BookProgress />
+        <div className="advance display">
+          <div className="porcent">
+            <BookPorcent />
+          </div>
+          <div className="progress">
+            <BookProgress />
+          </div>
         </div>
       </div>
     </>

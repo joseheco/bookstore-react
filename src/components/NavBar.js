@@ -4,7 +4,7 @@ import Profile from '../img/profile.svg';
 
 const NavBar = () => (
   <div>
-    <nav>
+    <nav className="display">
       <ul>
         <li className="title-app">
           Bookstore CMS
